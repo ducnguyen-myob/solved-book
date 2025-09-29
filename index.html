@@ -136,136 +136,63 @@
 
             <!-- Architecture -->
             <section>
-                <h2>🏗️ How It Works</h2>
+                <h2>🏗️ Architecture Flow</h2>
                 <div style="text-align: center;">
-                    <img src="Screenshot 2025-09-29 at 13.52.17.png" 
-                         alt="SolvedBook Architecture - Case-Based Planning and Tool-based Execution" 
-                         style="max-width: 90%; height: auto; border: 1px solid #ddd; border-radius: 5px;">
-                    <p style="font-size: 0.7em; margin-top: 15px;">
-                        Two-stage process: Case-Based Planning with memory storage and Tool-based Execution via MCP
+                    <img src="mermaid-diagram-2025-09-29-141330.svg" 
+                         alt="SolvedBook MCP Architecture Flow" 
+                         style="max-width: 95%; height: auto; margin-bottom: 20px;">
+                    <p style="font-size: 0.7em;">
+                        Complete flow: Problem intake → Vector storage → Solution search → Reward feedback
                     </p>
                 </div>
-            </section>
-
-            <!-- Memento Pattern -->
-            <section>
-                <h2>📐 Built on Memento Design Pattern</h2>
-                <div style="text-align: center;">
-                    <img src="image.png" 
-                         alt="Memento Design Pattern Architecture" 
-                         style="max-width: 70%; height: auto; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 20px;">
-                </div>
                 <div style="text-align: left;">
-                    <h4>Parametric Memory Architecture</h4>
-                    <p>SolvedBook implements the proven <a href="https://refactoring.guru/design-patterns/memento">Memento design pattern</a> with parametric memory:</p>
-                    
-                    <div class="fragment" data-fragment-index="1">
-                        <h4>🧠 Case Memory (Memento)</h4>
-                        <p>Stores problem states and solutions with parameters {st, ct, rt} for easy retrieval and restoration.</p>
-                    </div>
-                    <div class="fragment" data-fragment-index="2">
-                        <h4>🤖 LLM Planner (Originator)</h4>
-                        <p>Creates snapshots of problem-solving states and can restore from previous successful cases.</p>
-                    </div>
-                    <div class="fragment" data-fragment-index="3">
-                        <h4>🛠️ Tool Memory (Caretaker)</h4>
-                        <p>Manages when to capture states and when to restore from memory, maintaining execution history.</p>
-                    </div>
+                    <h4>Based on <a href="https://refactoring.guru/design-patterns/memento">Memento Design Pattern</a></h4>
+                    <p><strong>Vector memory with rewards:</strong> Problems and solutions stored with Q-learning feedback loop for continuous improvement.</p>
                 </div>
             </section>
 
-            <!-- Use Case Details -->
+            <!-- Use Cases in Action -->
             <section>
-                <h2>🚨 AI Live Playbook for Alerts</h2>
-                <div style="text-align: left;">
-                    <h4>Problem</h4>
-                    <p>Traditional alert playbooks become outdated and require manual maintenance.</p>
-                    
-                    <h4>Solution</h4>
-                    <p>AI automatically updates playbooks and executes solutions:</p>
-                    <ul>
-                        <li>Auto-detects similar alert patterns</li>
-                        <li>Learns from successful resolutions</li>
-                        <li>Executes proven fixes automatically</li>
-                        <li>Updates playbook based on new solutions</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- MCP Coding Assistant -->
-            <section>
-                <h2>💻 MCP Coding Assistant</h2>
-                <div style="text-align: left;">
-                    <h4>Problem</h4>
-                    <p>Developers repeatedly encounter similar problems in the same project/language.</p>
-                    
-                    <h4>Solution</h4>
-                    <p>MCP integration with VS Code/Cursor:</p>
-                    <ul>
-                        <li>Records coding problems and solutions</li>
-                        <li>Detects similar issues in real-time</li>
-                        <li>Suggests high-potential solutions</li>
-                        <li>Learns from project-specific patterns</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- AI Q&A -->
-            <section>
-                <h2>❓ AI Q&A with High Success Rate</h2>
-                <div style="text-align: left;">
-                    <h4>Problem</h4>
-                    <p>Developers and users ask similar questions repeatedly with varying answer quality.</p>
-                    
-                    <h4>Solution</h4>
-                    <p>Intelligent Q&A system with success tracking:</p>
-                    <ul>
-                        <li>Stores questions and validated answers</li>
-                        <li>Tracks answer success rates</li>
-                        <li>Provides most successful answers first</li>
-                        <li>Learns from user feedback and outcomes</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Examples -->
-            <section>
-                <h2>Examples</h2>
-                <div style="text-align: left;">
-                    <div class="fragment" data-fragment-index="1">
-                        <h4>🚨 Alert: "High CPU Usage"</h4>
-                        <p>AI finds previous resolution: restart service X, check process Y. Auto-executes fix with high success rate.</p>
+                <h2>🎯 Use Cases in Action</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>🚨 AI Live Playbook</h4>
+                        <p><strong>Auto-updating alert solutions:</strong> Detects patterns, executes proven fixes, learns from outcomes. No manual playbook maintenance.</p>
                     </div>
-                    <div class="fragment" data-fragment-index="2">
-                        <h4>💻 Code Error: "Import module not found"</h4>
-                        <p>MCP suggests: add dependency to package.json, check import path. Based on similar fixes in this project.</p>
+                    <div class="feature-item">
+                        <h4>💻 MCP Coding Assistant</h4>
+                        <p><strong>Smart coding help:</strong> Records solutions, detects similar issues in VS Code/Cursor, suggests fixes based on project patterns.</p>
                     </div>
-                    <div class="fragment" data-fragment-index="3">
-                        <h4>❓ Question: "How to deploy to production?"</h4>
-                        <p>AI answers: use deploy script, check env vars first. High success rate from previous cases.</p>
+                    <div class="feature-item">
+                        <h4>❓ Q&A with Success Tracking</h4>
+                        <p><strong>High-quality answers:</strong> Stores validated Q&As, ranks by success rate, learns from feedback to improve over time.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🧠 Vector Memory + Rewards</h4>
+                        <p><strong>Learning system:</strong> All solutions stored with embeddings, ranked by success, continuous Q-learning improvement.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Key Features -->
+            <!-- Examples & Features -->
             <section>
-                <h2>Key Features</h2>
-                <div style="text-align: left;">
-                    <div class="fragment" data-fragment-index="1">
+                <h2>Examples & Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>🚨 "High CPU Usage"</h4>
+                        <p>AI finds: restart service X, check process Y. Auto-executes with high success rate.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>💻 "Import module not found"</h4>
+                        <p>MCP suggests: add to package.json, fix path. Based on project patterns.</p>
+                    </div>
+                    <div class="feature-item">
                         <h4>🧠 Auto-Learning</h4>
-                        <p>Records problems and solutions automatically. Learns success patterns.</p>
+                        <p>Records all problems/solutions automatically. Learns what works best.</p>
                     </div>
-                    <div class="fragment" data-fragment-index="2">
-                        <h4>🔍 Similar Problem Detection</h4>
-                        <p>Finds similar issues using AI pattern matching. Context-aware suggestions.</p>
-                    </div>
-                    <div class="fragment" data-fragment-index="3">
-                        <h4>📊 Success Rate Tracking</h4>
-                        <p>Tracks solution effectiveness. Prioritizes high-success answers.</p>
-                    </div>
-                    <div class="fragment" data-fragment-index="4">
+                    <div class="feature-item">
                         <h4>🔌 MCP Integration</h4>
-                        <p>Works with VS Code, Cursor, and other MCP-compatible tools.</p>
+                        <p>Works with VS Code, Cursor, alert systems. Easy setup via MCP protocol.</p>
                     </div>
                 </div>
             </section>
