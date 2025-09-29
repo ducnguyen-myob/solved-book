@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolvedBook Smart MCP Server</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
+    <style>
+        .reveal {
+            font-size: 24px;
+        }
+        .reveal h1 {
+            font-size: 2em;
+            color: #000;
+            margin-bottom: 30px;
+        }
+        .reveal h2 {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 30px;
+        }
+        .reveal h3 {
+            font-size: 1.2em;
+            color: #000;
+            margin-bottom: 30px;
+        }
+        .reveal h4 {
+            font-size: 1em;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        .reveal p, .reveal li {
+            font-size: 0.8em;
+            color: #000;
+            line-height: 1.4;
+        }
+        .reveal .slides section {
+            padding: 30px;
+            text-align: center;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            text-align: left;
+        }
+        .feature-item {
+            background: #f8f8f8;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .feature-item h4 {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .feature-item p {
+            font-size: 0.7em;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            text-align: center;
+        }
+        .metric-card {
+            background: #f8f8f8;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .metric-card h4 {
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+        .metric-card h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .metric-card p {
+            font-size: 0.7em;
+        }
+        .highlight-text {
+            color: #000;
+            font-weight: bold;
+        }
+        .reveal ol, .reveal ul {
+            font-size: 0.8em;
+        }
+        .reveal small {
+            font-size: 0.6em;
+        }
+        .reveal table {
+            font-size: 0.7em;
+        }
+        .reveal blockquote {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section>
+                <h1>📚 SolvedBook</h1>
+                <h2>AI Solution Agent</h2>
+                <p>
+                    <span class="highlight-text">MCP Agent for Similar Problem Detection</span><br>
+                    Auto-Learning • Auto-Solving • Auto-Suggesting
+                </p>
+                <p>
+                    <small>Intelligent Problem Resolution with High Success Rate</small>
+                </p>
+            </section>
+
+            <!-- Core Use Cases -->
+            <section>
+                <h2>Core Use Cases</h2>
+                <div style="text-align: left;">
+                    <div class="fragment" data-fragment-index="1">
+                        <h4>🚨 AI Live Playbook for Alerts</h4>
+                        <p>Auto-updated playbooks that never go stale. AI reads and executes solutions for system alerts automatically.</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="2">
+                        <h4>💻 MCP Coding Assistant</h4>
+                        <p>Suggests similar problem solutions in VS Code/Cursor. Records and recommends high-potential fixes for your project.</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="3">
+                        <h4>❓ AI Q&A with High Success Rate</h4>
+                        <p>Stores user questions and answers. Provides precise answers with proven success rates for dev/user queries.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Architecture -->
+            <section>
+                <h2>🏗️ How It Works</h2>
+                <div style="text-align: center;">
+                    <img src="Screenshot 2025-09-29 at 13.52.17.png" 
+                         alt="SolvedBook Architecture - Case-Based Planning and Tool-based Execution" 
+                         style="max-width: 90%; height: auto; border: 1px solid #ddd; border-radius: 5px;">
+                    <p style="font-size: 0.7em; margin-top: 15px;">
+                        Two-stage process: Case-Based Planning with memory storage and Tool-based Execution via MCP
+                    </p>
+                </div>
+            </section>
+
+            <!-- Memento Pattern -->
+            <section>
+                <h2>📐 Built on Memento Design Pattern</h2>
+                <div style="text-align: center;">
+                    <img src="image.png" 
+                         alt="Memento Design Pattern Architecture" 
+                         style="max-width: 70%; height: auto; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 20px;">
+                </div>
+                <div style="text-align: left;">
+                    <h4>Parametric Memory Architecture</h4>
+                    <p>SolvedBook implements the proven <a href="https://refactoring.guru/design-patterns/memento">Memento design pattern</a> with parametric memory:</p>
+                    
+                    <div class="fragment" data-fragment-index="1">
+                        <h4>🧠 Case Memory (Memento)</h4>
+                        <p>Stores problem states and solutions with parameters {st, ct, rt} for easy retrieval and restoration.</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="2">
+                        <h4>🤖 LLM Planner (Originator)</h4>
+                        <p>Creates snapshots of problem-solving states and can restore from previous successful cases.</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="3">
+                        <h4>🛠️ Tool Memory (Caretaker)</h4>
+                        <p>Manages when to capture states and when to restore from memory, maintaining execution history.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Use Case Details -->
+            <section>
+                <h2>🚨 AI Live Playbook for Alerts</h2>
+                <div style="text-align: left;">
+                    <h4>Problem</h4>
+                    <p>Traditional alert playbooks become outdated and require manual maintenance.</p>
+                    
+                    <h4>Solution</h4>
+                    <p>AI automatically updates playbooks and executes solutions:</p>
+                    <ul>
+                        <li>Auto-detects similar alert patterns</li>
+                        <li>Learns from successful resolutions</li>
+                        <li>Executes proven fixes automatically</li>
+                        <li>Updates playbook based on new solutions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- MCP Coding Assistant -->
+            <section>
+                <h2>💻 MCP Coding Assistant</h2>
+                <div style="text-align: left;">
+                    <h4>Problem</h4>
+                    <p>Developers repeatedly encounter similar problems in the same project/language.</p>
+                    
+                    <h4>Solution</h4>
+                    <p>MCP integration with VS Code/Cursor:</p>
+                    <ul>
+                        <li>Records coding problems and solutions</li>
+                        <li>Detects similar issues in real-time</li>
+                        <li>Suggests high-potential solutions</li>
+                        <li>Learns from project-specific patterns</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- AI Q&A -->
+            <section>
+                <h2>❓ AI Q&A with High Success Rate</h2>
+                <div style="text-align: left;">
+                    <h4>Problem</h4>
+                    <p>Developers and users ask similar questions repeatedly with varying answer quality.</p>
+                    
+                    <h4>Solution</h4>
+                    <p>Intelligent Q&A system with success tracking:</p>
+                    <ul>
+                        <li>Stores questions and validated answers</li>
+                        <li>Tracks answer success rates</li>
+                        <li>Provides most successful answers first</li>
+                        <li>Learns from user feedback and outcomes</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Examples -->
+            <section>
+                <h2>Examples</h2>
+                <div style="text-align: left;">
+                    <div class="fragment" data-fragment-index="1">
+                        <h4>🚨 Alert: "High CPU Usage"</h4>
+                        <p>AI finds previous resolution: restart service X, check process Y. Auto-executes fix with high success rate.</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="2">
+                        <h4>💻 Code Error: "Import module not found"</h4>
+                        <p>MCP suggests: add dependency to package.json, check import path. Based on similar fixes in this project.</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="3">
+                        <h4>❓ Question: "How to deploy to production?"</h4>
+                        <p>AI answers: use deploy script, check env vars first. High success rate from previous cases.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section>
+                <h2>Key Features</h2>
+                <div style="text-align: left;">
+                    <div class="fragment" data-fragment-index="1">
+                        <h4>🧠 Auto-Learning</h4>
+                        <p>Records problems and solutions automatically. Learns success patterns.</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="2">
+                        <h4>🔍 Similar Problem Detection</h4>
+                        <p>Finds similar issues using AI pattern matching. Context-aware suggestions.</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="3">
+                        <h4>📊 Success Rate Tracking</h4>
+                        <p>Tracks solution effectiveness. Prioritizes high-success answers.</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="4">
+                        <h4>🔌 MCP Integration</h4>
+                        <p>Works with VS Code, Cursor, and other MCP-compatible tools.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- All Benefits -->
+            <section>
+                <h2>💰 Key Benefits</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>⏱️ Time Savings</h4>
+                        <p>Instant solution discovery instead of hours of debugging. Significant developer productivity gains.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🏷️ Cost Reduction</h4>
+                        <p>Reuse proven answers, reduce API token costs. Stop asking AI the same questions repeatedly.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📦 Smart Storage</h4>
+                        <p>Compact, validated knowledge only. No duplicates, high-value solutions with success tracking.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🚀 Quick Implementation</h4>
+                        <p>Simple setup, immediate value. Works with existing tools via MCP integration.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Getting Started -->
+            <section>
+                <h2>🎯 Getting Started</h2>
+                <div style="text-align: left;">
+                    <ol>
+                        <li class="fragment"><span class="highlight-text">Start with your biggest pain point</span> - Alert management, coding issues, or Q&A</li>
+                        <li class="fragment"><span class="highlight-text">Document 10-20 successful cases</span> - Capture what works with context</li>
+                        <li class="fragment"><span class="highlight-text">Set up MCP integration</span> - Connect with VS Code, Cursor, or monitoring systems</li>
+                        <li class="fragment"><span class="highlight-text">Let the system learn</span> - Rate suggestions and watch improvements</li>
+                        <li class="fragment"><span class="highlight-text">Scale gradually</span> - Expand to other teams and use cases as you see results</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Thank You -->
+            <section>
+                <h1>Transform Your Team Today! 🚀</h1>
+                <h3>📚 Your Smart Knowledge Partner</h3>
+                <h3>💡 Learning • Growing • Succeeding Together</h3>
+                <p style="margin-top: 50px;">
+                    <span class="highlight-text">SolvedBook turns your team's experience into your competitive advantage.</span><br>
+                    Stop solving the same problems twice.<br>
+                    Start building on what works.
+                </p>
+                <div style="margin-top: 40px;">
+                    <h4 class="highlight-text">Ready to get started?</h4>
+                    <p>Contact us for a free consultation and see how SolvedBook<br>
+                    can save your team time and boost productivity.</p>
+                </div>
+                <p style="margin-top: 30px;">
+                    <small>Questions & Discussion</small>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            controls: true,
+            progress: true,
+            center: true,
+            touch: true,
+            loop: false,
+            rtl: false,
+            navigationMode: 'default',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        });
+    </script>
+</body>
+</html>
